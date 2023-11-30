@@ -1,0 +1,70 @@
+.DetailsVacationAdmin  {
+	
+    
+}
+
+.DetailsVacationAdmin {
+    min-width: 300.16px;
+    max-width: 300.16px;
+    padding: 10px;
+}
+
+.DetailsVacationAdmin .card:hover {
+    box-shadow: rgba(255, 255, 255, 0.569) 0px 40px 40px -7px;
+}
+
+.DetailsVacationAdmin .card {
+
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 0.87);
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.DetailsVacationAdmin p {
+    font-size: 14px;
+}
+
+.DetailsVacationAdmin .card .card-image {
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: -30px;
+    border-radius: 6px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.DetailsVacationAdmin .card .card-image img {
+    width: 100%;
+    height: 120px;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.DetailsVacationAdmin .card .card-image .card-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: #fff;
+    font-size: 1.3em;
+    text-shadow: 0 2px 5px rgba(33, 33, 33, 0.5);
+}
+
+.DetailsVacationAdmin .card img {
+    width: 100%;
+    height: auto;
+}
+
+.DetailsVacationAdmin .img-raised {
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.DetailsVacationAdmin .card .ftr {
+    margin-top: 15px;
+}
+
+.DetailsVacationAdmin .card .ftr div {
+    display: inline-block;
+}

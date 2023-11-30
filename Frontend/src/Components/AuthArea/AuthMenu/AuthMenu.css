@@ -1,0 +1,18 @@
+/* .AuthMenu {
+	
+} */
+.AuthMenu {
+	position: absolute;
+    top: 20px;
+    right: 20px;
+    color: whitesmoke;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color:  darkblue;
+}
+
+.AuthMenu .Logout{
+    color: lightblue;
+    text-decoration: none;
+}
+
