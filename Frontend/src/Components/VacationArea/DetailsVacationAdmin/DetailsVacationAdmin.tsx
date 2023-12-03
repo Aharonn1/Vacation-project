@@ -1,15 +1,13 @@
-import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
 import { NavLink, useNavigate, useParams } from "react-router-dom";
-import VacationModel from "../../../Models/Vacation-Model";
 import vacationService from "../../../Service/VacationService";
+import VacationModel from "../../../Models/Vacation-Model";
 import appConfig from "../../../Utils/appConfig";
+import { useEffect, useState } from "react";
 import "./DetailsVacationAdmin.css";
 
 function DetailsVacationAdmin(): JSX.Element {
 
     const [vacation, setVacation] = useState<VacationModel>();
-    const { register, handleSubmit } = useForm<VacationModel>();
     const navigate = useNavigate();
     const params = useParams();
 
@@ -20,24 +18,15 @@ function DetailsVacationAdmin(): JSX.Element {
     }, [])
 
     async function deleteVacation() {
-        try {
-
-            const sure = window.confirm("Are you sure?");
-            if (!sure) return;
-
-            await vacationService.deleteVacation(vacation.vacationId);
-            alert("Vacation has been deleted");
-            navigate("/vacation");
-        }
-        catch (err: any) {
-            alert(err.message);
-        }
+        const sure = window.confirm("Are you sure?");
+        if (!sure) return;
+        await vacationService.deleteVacation(vacation.vacationId);
+        alert("Vacation has been deleted");
+        navigate("/vacation");
     }
-
 
     return (
         <div className="DetailsVacationAdmin ">
-
             {vacation &&
                 <>
                     <div className="card card-blog">
@@ -61,18 +50,15 @@ function DetailsVacationAdmin(): JSX.Element {
                             </div>
                             <br />
                             <div className="price">{vacation.price}$ <br />
-
                                 <NavLink to="/admin/vacation">Back</NavLink>
                                 <span> | </span>
                                 <NavLink to={"/admin/vacations/update/" + vacation.vacationId}>update</NavLink>
                                 <span> | </span>
                                 <button onClick={() => deleteVacation()}>Delete</button>
                             </div>
-
                         </div>
                     </div>
-                </>
-            }
+                </>}
         </div>
     );
 }

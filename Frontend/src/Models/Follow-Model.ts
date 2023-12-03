@@ -1,7 +1,5 @@
-
 class FollowModel {
-    public userId:number;
-    public vacationId:number;
+     userId:number;
+     vacationId:number;
 }
-
 export default FollowModel

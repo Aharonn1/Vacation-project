@@ -9,7 +9,6 @@ class AuthService{
     public async register(user:UserModel):Promise<void>{
         //send user to backend
         
-
         const response = await axios.post<string>(appConfig.registerUrl,user);
         
         //get the returned token
@@ -22,21 +21,19 @@ class AuthService{
 
     }
 
-    public async login(Credentials:CredentialsModel):Promise<void>{
+     async login(Credentials:CredentialsModel):Promise<void>{
         const response = await axios.post<string>(appConfig.loginUrl,Credentials);
         const token = response.data;
         authStore.dispatch({type:AuthActionType.Login,payload: token})
     }
 
-    public logout():void{
+     logout():void{
         authStore.dispatch({type:AuthActionType.Logout})
     }
 
-    public isLoggedIn():boolean{
+     isLoggedIn():boolean{
         return authStore.getState().token !== null;
     }
-
-
 }
 
 const authService = new AuthService()

@@ -1,7 +1,6 @@
 class CredentialsModel {
-
-    public email: string
-    public password: string;
+    email: string
+    password: string;
 }
 
 export default CredentialsModel;

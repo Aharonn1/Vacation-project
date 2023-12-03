@@ -1,24 +1,20 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import VacationModel from "../../../Models/Vacation-Model";
 import appConfig from "../../../Utils/appConfig";
+import { NavLink } from "react-router-dom";
 import "./VacationCardForAdmin.css";
 
-
-interface VacationCardProps{
+interface VacationCardProps {
     vacation: VacationModel;
 }
 
-
-function VacationCardForAdmin(props:VacationCardProps): JSX.Element {
+function VacationCardForAdmin(props: VacationCardProps): JSX.Element {
 
     return (
         <div className="VacationCardForAdmin ">
-
-		  <div className="card card-blog">
+            <div className="card card-blog">
                 <div className="card-image">
                     <NavLink to={"/vacation/details/" + props.vacation.vacationId}>
-                    <img className="img" src={appConfig.vacationsImagesUsersUrl + props.vacation?.imageName} />
+                        <img className="img" src={appConfig.vacationsImagesUsersUrl + props.vacation?.imageName} />
                     </NavLink>
                     <div className="ripple-cont"></div>
                 </div>
@@ -38,13 +34,9 @@ function VacationCardForAdmin(props:VacationCardProps): JSX.Element {
                     </div>
                     <br />
                     <div className="price">{props.vacation.price}$ <br />
-                       
                     </div>
-                  
                 </div>
             </div>
-         
-         
         </div>
     );
 }

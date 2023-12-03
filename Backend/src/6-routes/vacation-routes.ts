@@ -1,10 +1,10 @@
 import express, { Request, Response, NextFunction } from "express";
-import cyber from "../2-utils/cyber";
-import imageHandler from "../2-utils/image-handler";
-import verifyAdmin from "../3-middleware/verify-admin";
-import verifyLoggedIn from "../3-middleware/verify-logged-in";
-import VacationModel from "../4-models/vacation-model";
 import vacationsService from "../5-services/vacations-service";
+import verifyLoggedIn from "../3-middleware/verify-logged-in";
+import verifyAdmin from "../3-middleware/verify-admin";
+import VacationModel from "../4-models/vacation-model";
+import imageHandler from "../2-utils/image-handler";
+import cyber from "../2-utils/cyber";
 
 const router = express.Router();
 
@@ -19,7 +19,6 @@ router.get("/users/vacations", verifyLoggedIn, async (request: Request, response
     }
 });
 
-
 router.post("/users/follow/:vacationId", async (request: Request, response: Response, next: NextFunction) => {
     try {
 
@@ -32,7 +31,6 @@ router.post("/users/follow/:vacationId", async (request: Request, response: Resp
         next(err);
     }
 });
-
 
 router.delete("/users/follow/:vacationId", verifyLoggedIn, async (request: Request, response: Response, next: NextFunction) => {
     try {
@@ -56,14 +54,7 @@ router.get("/users/vacations/images/:imageName", async (request: Request, respon
     }
 })
 
-
-
-
-
-
 //-----------------------------------------------------------------------------------------------------
-
-
 
 router.get("/admin/vacations", verifyLoggedIn, async (request: Request, response: Response, next: NextFunction) => {
     try {
@@ -74,7 +65,6 @@ router.get("/admin/vacations", verifyLoggedIn, async (request: Request, response
         next(err);
     }
 });
-
 
 router.post("/admin/vacations", verifyAdmin, async (request: Request, response: Response, next: NextFunction) => {
     try {
@@ -121,6 +111,5 @@ router.get("/admin/vacations/:vacationId([0-9]+)",verifyAdmin, async (request: R
         next(err)
     }
 })
-
 
 export default router;

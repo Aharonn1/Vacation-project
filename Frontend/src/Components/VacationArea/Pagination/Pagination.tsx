@@ -16,8 +16,7 @@ const Pagination:React.FC<{totalPost: number,postPerPage: number,
             {
                 pageNumbers.map((page,index)=>{
                     return <button key={index} onClick={() => setCurrentPage(page)} 
-                    className =   {page == currentPage ? 'active' : ''} >{page}</button>
-                  
+                    className =   {page == currentPage ? 'active' : ''} >{page}</button>                  
                 })
             }
         </div>
